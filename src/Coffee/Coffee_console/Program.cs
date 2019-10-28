@@ -12,6 +12,7 @@ namespace Coffee_console
 
             Buyer B = new Buyer();
             B.name = name;
+            //what happens when name invalid?
             Console.WriteLine($"Welcome {B.name}");
 
             Console.WriteLine(" now choose coffee");
