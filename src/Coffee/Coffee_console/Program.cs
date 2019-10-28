@@ -14,6 +14,8 @@ namespace Coffee_console
             B.name = name;
             Console.WriteLine($"Welcome {B.name}");
 
+            Console.WriteLine(" now choose coffee");
+
             
             
 
