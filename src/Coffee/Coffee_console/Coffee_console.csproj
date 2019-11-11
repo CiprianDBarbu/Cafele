@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoffeeBL\CoffeeBL.csproj" />
+    <ProjectReference Include="..\Menu\Menu.csproj" />
   </ItemGroup>
 
 </Project>

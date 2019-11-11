@@ -1,0 +1,6 @@
+﻿Name, Origin, Price, Flavour
+Bourbon, Latin America, 2.72, 0
+SL28, Kenya, 1.67, 3
+Timor, Indonesia, 3.99, 1
+French Mission,Africa, 3.20, 2
+Java, Indonesia, 5.21, 2

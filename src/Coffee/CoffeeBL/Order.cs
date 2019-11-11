@@ -4,9 +4,13 @@ using System.Text;
 
 namespace CoffeeBL
 {
-    class Order
+    public class Order
     {
+        public Order()
+        {
+            coffees = new List<Ordered_Coffee>();
+        }
         public Buyer customer { get; set; }
-        public Ordered_Coffee coffees { get; set; } /*voiam * cu ideea de a fi un pointer pe care se poate aloca dinamic vectorul de cafele*/
+        public List<Ordered_Coffee> coffees { get; set; } 
     }
 }

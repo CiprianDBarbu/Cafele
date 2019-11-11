@@ -59,7 +59,7 @@ namespace TestCoffee
 
         }
         [Fact]
-        public void TestName()
+        public void TestNameNull()
         {
             #region arrange
             Buyer c = new Buyer();
@@ -69,6 +69,19 @@ namespace TestCoffee
             #endregion
             #region assert
             Assert.Equal(validation_result.name_inccorect, c.IsValid());
+            #endregion
+        }
+        [Fact]
+        public void TestNameNotNull()
+        {
+            #region arrange
+            Buyer c = new Buyer();
+            #endregion
+            #region act
+            c.name = "asda";
+            #endregion
+            #region assert
+            Assert.Equal(validation_result.succes, c.IsValid());
             #endregion
         }
 
