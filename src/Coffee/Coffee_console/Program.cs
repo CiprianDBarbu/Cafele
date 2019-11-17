@@ -66,11 +66,22 @@ namespace Coffee_console
 
                 d.coffees.Add(oc);
 
+                oc.actual_price = oc.quantity * oc.coffee_order.price;
+                d.total_price = d.total_price + oc.actual_price;
+
                 Console.WriteLine("Is the order done?(Y/N)");
                 string ok = Console.ReadLine().ToUpper();
                 if (ok == "Y" )
                     orderdone = true;
             }
+
+            Console.WriteLine("Your order:\n");
+            for(int i = 0; i < d.coffees.Count;i++)
+            {
+                var curent = d.coffees[i];
+                Console.WriteLine($"Coffee: {curent.coffee_order.name}  Quantity:{curent.quantity}  Price:{curent.actual_price}\n");
+            }
+            Console.WriteLine($"Total: {d.total_price}");
 
 
         }

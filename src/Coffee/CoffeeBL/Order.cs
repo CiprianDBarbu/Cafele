@@ -12,5 +12,7 @@ namespace CoffeeBL
         }
         public Buyer customer { get; set; }
         public List<Ordered_Coffee> coffees { get; set; } 
+
+        public float total_price { get; set; }
     }
 }

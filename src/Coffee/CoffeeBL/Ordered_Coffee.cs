@@ -17,6 +17,7 @@ namespace CoffeeBL
         public coffee_type type { get; set; }
 
         public int quantity { get; set; }
-
+        public float actual_price { get; set; }
+        
     }
 }
