@@ -71,6 +71,7 @@ namespace Menu
             //return find;
         }
 
+              //Afisare Cafea in ordinea citirii
         public void ShowCoffee()
         {
             for(int i = 0; i < CoffeeMenuList.Count; i++)
@@ -78,6 +79,14 @@ namespace Menu
                 var curent = CoffeeMenuList[i];
                 Console.WriteLine($"{curent.name}");
             }
+        }
+       
+
+        public void ShowCoffeeInOrder()
+        {
+            CoffeeMenuList.Sort();
+            //CoffeeMenuList = CoffeeMenuList.OrderBy(q => q).ToList();  // Am gasit si varinta aceasta insa nu stiu daca merge(sau care)
+            this.ShowCoffee(); //nu stiu daca exista pointerul this
         }
 
     }
