@@ -37,6 +37,7 @@ namespace Coffee_console
             bool orderdone = false;
             while (!orderdone)
             {
+                Ordered_Coffee oc = new Ordered_Coffee();
                 Console.WriteLine("Please chose coffee!");
                 string namecoffee = Console.ReadLine();
 
@@ -44,16 +45,26 @@ namespace Coffee_console
                 if (cm.ExistCoffee(namecoffee))
                 {
                     Console.WriteLine($"Thank you for chosing {namecoffee}");
-                    Ordered_Coffee oc = new Ordered_Coffee();
                     oc.coffee_order = cm.GiveCoffeeAfterName(namecoffee);
-
-                    d.coffees.Add(oc);
-
                 }
                 else
                     Console.WriteLine("Not found coffee!\n");
 
+                Console.WriteLine("Please choose quantity!");
+                string quantity_coffee = Console.ReadLine();
 
+                if (string.IsNullOrWhiteSpace(quantity_coffee))
+                {
+                    oc.quantity = 1;
+                }
+                else 
+                {
+                    Console.WriteLine("Thank you for choosing quantity!");
+                    int quant_coffee = Int32.Parse(quantity_coffee);
+                    oc.quantity = quant_coffee;
+                }
+
+                d.coffees.Add(oc);
 
                 Console.WriteLine("Is the order done?(Y/N)");
                 string ok = Console.ReadLine().ToUpper();

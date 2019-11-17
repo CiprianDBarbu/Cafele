@@ -35,6 +35,7 @@ namespace Menu
 
         public Coffee GiveCoffeeAfterName(string name)
         {
+            //Linq
 
             return CoffeeMenuList.FirstOrDefault(it => it.name == name);
             //for (int i = 0; i < CoffeeMenuList.Count; i++)
@@ -68,6 +69,15 @@ namespace Menu
             //    }
             //}
             //return find;
+        }
+
+        public void ShowCoffee()
+        {
+            for(int i = 0; i < CoffeeMenuList.Count; i++)
+            {
+                var curent = CoffeeMenuList[i];
+                Console.WriteLine($"{curent.name}");
+            }
         }
 
     }
