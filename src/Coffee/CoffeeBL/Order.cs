@@ -9,6 +9,7 @@ namespace CoffeeBL
         public Order()
         {
             coffees = new List<Ordered_Coffee>();
+            customer = new Buyer();
         }
         public Buyer customer { get; set; }
         public List<Ordered_Coffee> coffees { get; set; } 

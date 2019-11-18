@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeBL", "CoffeeBL\Coffee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCoffee", "TestCoffee\TestCoffee.csproj", "{9EA68E15-1E37-4D65-8887-3FC8010BA9CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu", "Menu\Menu.csproj", "{0563B96A-58FC-439A-A17C-6B606F6AE2F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu", "Menu\Menu.csproj", "{0563B96A-58FC-439A-A17C-6B606F6AE2F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CofeeMenu", "CofeeMenu\CofeeMenu.csproj", "{2438EF8B-DA03-4E93-9E26-203353B097DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0563B96A-58FC-439A-A17C-6B606F6AE2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0563B96A-58FC-439A-A17C-6B606F6AE2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0563B96A-58FC-439A-A17C-6B606F6AE2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -22,5 +22,9 @@ namespace CoffeeBL
             return validation_result.succes;
         }
 
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

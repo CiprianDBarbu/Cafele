@@ -17,6 +17,13 @@ namespace CoffeeBL
         public string origin_country { get; set; }
         public eflavour_coffee flavour { get; set; }
         
+
         
+        public override string ToString()
+        {
+            return "Coffee :" + base.ToString() + " , " + base.price;
+        }
+
+
     }
 }
