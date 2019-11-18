@@ -12,12 +12,25 @@ namespace CoffeeBL
     }
     public class Ordered_Coffee
     {
+        public Ordered_Coffee()
+        {
+            this.quantity = 1;
+            this.coffee_order = new Coffee();
+        }
         public Coffee coffee_order { get; set; }
         public Syroup syroup_order { get; set; }
         public coffee_type type { get; set; }
 
         public int quantity { get; set; }
-        public float actual_price { get; set; }
+        public float actual_price {
+            get
+            {
+                return quantity * coffee_order.price;
+            }
         
+        }
+
+        
+
     }
 }

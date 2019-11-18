@@ -23,14 +23,13 @@ namespace Coffee_console
             d.customer = B;
             Console.WriteLine($"Welcome {B.name}");
 
-            Console.WriteLine(" now choose coffee");
             CoffeeMenu cm = new CoffeeMenu();
             cm.loadfromfile();
-            for (int i = 0; i < cm.CoffeeMenuList.Count; i++)
-            {
-                var curent = cm.CoffeeMenuList[i];
-                Console.WriteLine($"{curent.name}");
-            }
+          
+            cm.ShowCoffeeInOrder();
+
+            Console.WriteLine(" now choose coffee");
+           
 
 
 
@@ -66,8 +65,8 @@ namespace Coffee_console
 
                 d.coffees.Add(oc);
 
-                oc.actual_price = oc.quantity * oc.coffee_order.price;
-                d.total_price = d.total_price + oc.actual_price;
+                //oc.actual_price = oc.quantity * oc.coffee_order.price;
+                //d.total_price = d.total_price + oc.actual_price;
 
                 Console.WriteLine("Is the order done?(Y/N)");
                 string ok = Console.ReadLine().ToUpper();
@@ -79,6 +78,7 @@ namespace Coffee_console
             for(int i = 0; i < d.coffees.Count;i++)
             {
                 var curent = d.coffees[i];
+                //curent.actual_price = 1;
                 Console.WriteLine($"Coffee: {curent.coffee_order.name}  Quantity:{curent.quantity}  Price:{curent.actual_price}\n");
             }
             Console.WriteLine($"Total: {d.total_price}");

@@ -72,19 +72,24 @@ namespace Menu
         }
 
               //Afisare Cafea in ordinea citirii
-        public void ShowCoffee()
+        private void ShowCoffee()
         {
             for(int i = 0; i < CoffeeMenuList.Count; i++)
             {
                 var curent = CoffeeMenuList[i];
-                Console.WriteLine($"{curent.name}");
+                Console.WriteLine($"{curent.name} {curent.price}");
             }
         }
        
+        public int CompareCoffeeName(Coffee A, Coffee B)
+        {
+            return A.name.CompareTo(B.name);
+        }
 
         public void ShowCoffeeInOrder()
         {
-            CoffeeMenuList.Sort();
+           // CoffeeMenuList.Sort(CompareCoffeeName);
+            CoffeeMenuList.Sort((Coffee A, Coffee B) => A.name.CompareTo(B.name));
             //CoffeeMenuList = CoffeeMenuList.OrderBy(q => q).ToList();  // Am gasit si varinta aceasta insa nu stiu daca merge(sau care)
             this.ShowCoffee(); //nu stiu daca exista pointerul this
         }
