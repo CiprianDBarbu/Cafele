@@ -42,6 +42,15 @@ namespace CofeeMenu
                         var curent = cm.CoffeeMenuList[i];
                         lstCoffee.Items.Add(curent);
                     }
+
+                    SyroupMenu sm = new SyroupMenu();
+                    sm.loadfromfile();
+
+                    for(int i = 0; i < sm.SyroupMenuList.Count; i++)
+                    {
+                        var curent = sm.SyroupMenuList[i];
+                        lstSyroup.Items.Add(curent);
+                    }
                 }
             }       
         }

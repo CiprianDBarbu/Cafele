@@ -33,6 +33,7 @@
             this.lstCoffee = new System.Windows.Forms.CheckedListBox();
             this.btnFinishOrder = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lstSyroup = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -80,11 +81,20 @@
             this.lblTotal.TabIndex = 5;
             this.lblTotal.Text = "Total:";
             // 
+            // lstSyroup
+            // 
+            this.lstSyroup.FormattingEnabled = true;
+            this.lstSyroup.Location = new System.Drawing.Point(408, 120);
+            this.lstSyroup.Name = "lstSyroup";
+            this.lstSyroup.Size = new System.Drawing.Size(224, 225);
+            this.lstSyroup.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lstSyroup);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnFinishOrder);
             this.Controls.Add(this.lstCoffee);
@@ -105,6 +115,7 @@
         private System.Windows.Forms.CheckedListBox lstCoffee;
         private System.Windows.Forms.Button btnFinishOrder;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.CheckedListBox lstSyroup;
     }
 }
 

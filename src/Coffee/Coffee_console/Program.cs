@@ -24,14 +24,14 @@ namespace Coffee_console
             Console.WriteLine($"Welcome {B.name}");
 
             CoffeeMenu cm = new CoffeeMenu();
+            SyroupMenu sm = new SyroupMenu();
             cm.loadfromfile();
+            sm.loadfromfile();
           
             cm.ShowCoffeeInOrder();
+            sm.ShowSyroupInOrder();
 
             Console.WriteLine(" now choose coffee");
-           
-
-
 
             bool orderdone = false;
             while (!orderdone)
@@ -61,6 +61,19 @@ namespace Coffee_console
                     Console.WriteLine("Thank you for choosing quantity!");
                     int quant_coffee = Int32.Parse(quantity_coffee);
                     oc.quantity = quant_coffee;
+                }
+
+                Console.WriteLine("Please choose syroup!\n");
+                string NameSyroup = Console.ReadLine();
+
+                if(sm.ExistSyroup(NameSyroup))
+                {
+                    Console.WriteLine($"Thank you for choosing {NameSyroup}!\n");
+                    oc.syroup_order = sm.GiveSyroupAfterName(NameSyroup);
+                }
+                else 
+                {
+                    Console.WriteLine("Not found syroup!\n");
                 }
 
                 d.coffees.Add(oc);

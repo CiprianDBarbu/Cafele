@@ -1,0 +1,4 @@
+﻿Name, Flavour, Price
+Irish, 1, 0.10
+Toffee, 1, 0.15
+SaltyCaramel, 2, 0.25

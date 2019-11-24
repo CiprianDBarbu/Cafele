@@ -25,7 +25,7 @@ namespace CoffeeBL
         public float actual_price {
             get
             {
-                return quantity * coffee_order.price;
+                return quantity * coffee_order.price + syroup_order.price;
             }
         
         }

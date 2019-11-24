@@ -11,7 +11,6 @@ namespace Menu
         public CoffeeMenu()
         {
             CoffeeMenuList = new List<Coffee>();
-
         }
         public List<Coffee> CoffeeMenuList { get; set; }
 
