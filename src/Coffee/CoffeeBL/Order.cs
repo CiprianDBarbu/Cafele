@@ -37,5 +37,10 @@ namespace CoffeeBL
                 return price;
             }
         }
+
+        public void OrderStateModify(order_state aux)
+        {
+            this.state = aux;
+        }
     }
 }

@@ -13,6 +13,11 @@ namespace CoffeeBL
             if (string.IsNullOrWhiteSpace(name)) return validation_result.name_inccorect;
             return validation_result.succes;
         }
+
+        public void CompleteOrder(Order aux)
+        {
+            aux.OrderStateModify(order_state.user_finished);
+        }
     }
 
   
