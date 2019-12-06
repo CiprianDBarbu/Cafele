@@ -28,8 +28,12 @@ namespace Coffee_console
             cm.loadfromfile();
             sm.loadfromfile();
           
-            cm.ShowCoffeeInOrder();
-            sm.ShowSyroupInOrder();
+            cm.InOrder();
+            cm.ShowCoffee();
+
+            Console.WriteLine("-----");
+            sm.InOrder();
+            sm.ShowSyroup();
 
             Console.WriteLine(" now choose coffee");
 

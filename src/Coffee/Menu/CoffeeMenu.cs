@@ -13,10 +13,9 @@ namespace Menu
             CoffeeMenuList = new List<Coffee>();
         }
         public List<Coffee> CoffeeMenuList { get; set; }
-
-        public void loadfromfile() {
-
-           string[] lines = File.ReadAllLines("ListCoffee.txt");
+        public void loadfromfile(string filePath)
+        {
+            string[] lines = File.ReadAllLines(filePath);
             for (int i = 1; i < lines.Length; i++)
             {
                 var line = lines[i];
@@ -30,6 +29,9 @@ namespace Menu
 
             }
 
+        }
+        public void loadfromfile() {
+            loadfromfile("ListCoffee.txt");
         }
 
         public Coffee GiveCoffeeAfterName(string name)
@@ -71,7 +73,7 @@ namespace Menu
         }
 
               //Afisare Cafea in ordinea citirii
-        private void ShowCoffee()
+        public void ShowCoffee()
         {
             for(int i = 0; i < CoffeeMenuList.Count; i++)
             {
@@ -85,12 +87,11 @@ namespace Menu
             return A.name.CompareTo(B.name);
         }
 
-        public void ShowCoffeeInOrder()
+        public void InOrder()
         {
            // CoffeeMenuList.Sort(CompareCoffeeName);
             CoffeeMenuList.Sort((Coffee A, Coffee B) => A.name.CompareTo(B.name));
             //CoffeeMenuList = CoffeeMenuList.OrderBy(q => q).ToList();  // Am gasit si varinta aceasta insa nu stiu daca merge(sau care)
-            this.ShowCoffee(); //nu stiu daca exista pointerul this
         }
 
     }

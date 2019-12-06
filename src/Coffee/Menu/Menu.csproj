@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,10 +6,14 @@
 
   <ItemGroup>
     <None Remove="ListCoffee.txt" />
+    <None Remove="ListSyroup.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="ListCoffee.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ListSyroup.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

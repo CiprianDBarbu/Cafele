@@ -36,7 +36,7 @@ namespace CofeeMenu
                 {
                     CoffeeMenu cm = new CoffeeMenu();
                     cm.loadfromfile();
-
+                    cm.InOrder();
                     for (int i = 0; i < cm.CoffeeMenuList.Count; i++)
                     {
                         var curent = cm.CoffeeMenuList[i];
@@ -45,6 +45,7 @@ namespace CofeeMenu
 
                     SyroupMenu sm = new SyroupMenu();
                     sm.loadfromfile();
+                    sm.InOrder();
 
                     for(int i = 0; i < sm.SyroupMenuList.Count; i++)
                     {
@@ -73,6 +74,8 @@ namespace CofeeMenu
                 order.coffees.Add(aux);
 
             }
+
+
 
             lblTotal.Text = order.total_price.ToString();
         }

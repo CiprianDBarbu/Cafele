@@ -14,6 +14,9 @@ namespace CoffeeBL
     {
        
         public eflavour_syroup flavour { get; set; }
-      
+        public override string ToString()
+        {
+            return base.ToString() + " " + price;
+        }
     }
 }

@@ -13,9 +13,10 @@ namespace Menu
             SyroupMenuList = new List<Syroup>();
         }
         public List<Syroup> SyroupMenuList { get; set; }
-        public void loadfromfile()
+
+        public void loadfromfile(string path)
         {
-            string[] lines = File.ReadAllLines("ListSyroup.txt");
+            string[] lines = File.ReadAllLines(path);
             for (int i = 1; i < lines.Length; i++)
             {
                 var line = lines[i];
@@ -26,6 +27,11 @@ namespace Menu
                 aux.price = float.Parse(split[2]);
                 SyroupMenuList.Add(aux);
             }
+        }
+
+        public void loadfromfile()
+        {
+            loadfromfile("ListSyroup.txt");
         }
         public Syroup GiveSyroupAfterName(string name)
         {
@@ -53,7 +59,7 @@ namespace Menu
             }
             return find;
         }
-        private void ShowSyroup()
+        public void ShowSyroup()
         {
             for (int i = 0; i < SyroupMenuList.Count; i++)
             {
@@ -67,10 +73,9 @@ namespace Menu
             return A.name.CompareTo(B.name);
         }
 
-        public void ShowSyroupInOrder()
+        public void InOrder()
         {
             SyroupMenuList.Sort((Syroup A, Syroup B) => A.name.CompareTo(B.name));
-            this.ShowSyroup();
         }
     }
 }

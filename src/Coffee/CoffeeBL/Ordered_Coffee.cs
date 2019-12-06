@@ -16,6 +16,7 @@ namespace CoffeeBL
         {
             this.quantity = 1;
             this.coffee_order = new Coffee();
+            this.syroup_order = new Syroup();
         }
         public Coffee coffee_order { get; set; }
         public Syroup syroup_order { get; set; }

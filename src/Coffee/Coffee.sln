@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu", "Menu\Menu.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CofeeMenu", "CofeeMenu\CofeeMenu.csproj", "{2438EF8B-DA03-4E93-9E26-203353B097DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeWeb", "CoffeeWeb\CoffeeWeb.csproj", "{EA3F3DB9-A242-4DC1-8A9B-5FCBB67DD423}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2438EF8B-DA03-4E93-9E26-203353B097DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3F3DB9-A242-4DC1-8A9B-5FCBB67DD423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3F3DB9-A242-4DC1-8A9B-5FCBB67DD423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3F3DB9-A242-4DC1-8A9B-5FCBB67DD423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3F3DB9-A242-4DC1-8A9B-5FCBB67DD423}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
