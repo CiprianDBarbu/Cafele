@@ -1,0 +1,7 @@
+<h2>Our coffees!</h2>
+<ul>
+    <li *ngFor = "let coffee of MyCoffees">
+        <input type="checkbox"  [(ngModel)]="coffee.isChecked"  name="{{coffee.name}}" value="{{coffee.id}}" (change)="checkValue(coffee.isChecked, coffee)" >  {{coffee.name}} {{coffee.price}}
+        <app-syroups></app-syroups>  
+    </li>
+</ul>

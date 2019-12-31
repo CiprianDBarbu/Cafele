@@ -1,0 +1,10 @@
+<p>Ordered coffees : </p>
+<p>Total coffees : {{o.CoffeList.length}}</p>
+
+<ul>
+    <li *ngFor = "let oc of o.CoffeList">
+        {{oc.coffee.name}} {{oc.coffee.price}}
+    </li>
+</ul>
+
+<p>Final price: {{o.TotalPrice()| number:'1.2-2'}}</p>
