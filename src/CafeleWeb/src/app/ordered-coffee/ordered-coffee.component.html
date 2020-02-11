@@ -1,9 +1,11 @@
 <p>Ordered coffees : </p>
-<p>Total coffees : {{o.CoffeList.length}}</p>
+<p>Total coffees : {{o.TotalNumberCoffees()}}</p>
 
 <ul>
     <li *ngFor = "let oc of o.CoffeList">
-        {{oc.coffee.name}} {{oc.coffee.price}}
+        {{oc.coffee.name}} {{oc.coffee.price}} 
+        number coffees:{{oc.nrCoffees}}
+        syroup: {{oc?.syroup?.name}}
     </li>
 </ul>
 

@@ -1,6 +1,7 @@
 ﻿using CoffeeBL;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 
@@ -23,7 +24,8 @@ namespace Menu
                 Coffee aux = new Coffee();
                 aux.name = split[0];
                 aux.origin_country = split[1];
-                aux.price = float.Parse(split[2]);
+                var culture = CultureInfo.CreateSpecificCulture("en-US");
+                aux.price = float.Parse(split[2],culture);
                 aux.flavour = (eflavour_coffee)int.Parse(split[3]);
                 CoffeeMenuList.Add(aux);
 

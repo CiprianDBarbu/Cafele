@@ -14,7 +14,7 @@ export class AppComponent implements  OnInit {
     ngOnInit() {
         this.serv.getCofee().subscribe(
             v => {
-                window.alert("coffee number : " + v.length);
+                //window.alert("coffee number : " + v.length);
                // window.alert(JSON.stringify(v[0]));
             })
 

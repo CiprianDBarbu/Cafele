@@ -14,4 +14,14 @@ export class  Order {
         }
         return total;
     }
+
+    public TotalNumberCoffees():number{
+    let TotNr = 0;
+        for(let el of this.CoffeList)
+        {
+            TotNr += el.nrCoffees ;
+        }
+
+        return TotNr;
+    }
 }

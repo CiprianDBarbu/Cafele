@@ -62,8 +62,9 @@ namespace CoffeeWeb.Controllers
        
         [HttpGet]
         public Coffee[] AllCofees()
-        {   
+        {
             
+            Program.NrRequests++;
             var folder = Directory.GetCurrentDirectory();
             var fileCoffee = FindFile(folder, search_type.coffee);
             CoffeeMenu cm = new CoffeeMenu();
@@ -76,6 +77,8 @@ namespace CoffeeWeb.Controllers
         [HttpGet]
         public Syroup[] AllSyroups()
         {
+            Program.NrRequests++;
+
             var folder = Directory.GetCurrentDirectory();
             var fileSyroup = FindFile(folder, search_type.syroup);
             SyroupMenu cm = new SyroupMenu();

@@ -1,5 +1,7 @@
-<ul>
+<ul >
+    
     <li *ngFor = "let syroup of MySyroups">
-        <input type="checkbox" name="{{syroup.name}}" value="{{syroup.id}}">  {{syroup.name}} {{syroup.price}}
+       
+        <input  [(ngModel)]="syroup.isChecked"  type="radio" name="syroup{{parentCoffee.name}}"  value="{{syroup.name}}"  (change)="checkValue(syroup.isChecked, syroup)">  {{syroup.name}} {{syroup.price}}
     </li>
 </ul>

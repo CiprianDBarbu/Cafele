@@ -4,13 +4,14 @@ import { Syroup } from './syroup';
 export class OrderedCoffee {
     coffee:Coffee;
     syroup:Syroup;
-
-    public /**
+    nrCoffees: number;
+    /**
      *
      */
     constructor() {
        this.syroup = null;
-       this.coffee = null;        
+       this.coffee = null;   
+           
     }
 
     public TotalPrice(): number 
@@ -23,6 +24,6 @@ export class OrderedCoffee {
         {
             priceCoffee += this.syroup.price;
         }
-        return priceCoffee;
+        return this.nrCoffees * priceCoffee;
     }
 }

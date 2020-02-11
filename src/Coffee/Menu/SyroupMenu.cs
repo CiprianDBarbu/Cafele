@@ -1,6 +1,7 @@
 ﻿using CoffeeBL;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Text;
 
@@ -16,6 +17,7 @@ namespace Menu
 
         public void loadfromfile(string path)
         {
+            var culture = CultureInfo.CreateSpecificCulture("en-US");
             string[] lines = File.ReadAllLines(path);
             for (int i = 1; i < lines.Length; i++)
             {
@@ -23,8 +25,8 @@ namespace Menu
                 var split = line.Split(',');
                 Syroup aux = new Syroup();
                 aux.name = split[0];
-                aux.flavour = (eflavour_syroup)int.Parse(split[1]);
-                aux.price = float.Parse(split[2]);
+                aux.flavour = (eflavour_syroup)float.Parse(split[1]);
+                aux.price = float.Parse(split[2],culture);
                 SyroupMenuList.Add(aux);
             }
         }

@@ -5,5 +5,6 @@ export class Coffee {
     name: string;
     price: number;
     isChecked:boolean;
+    selectedOption: number;
 
 }

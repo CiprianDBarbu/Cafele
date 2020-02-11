@@ -11,8 +11,11 @@ namespace CoffeeWeb
 {
     public class Program
     {
+        public static int NrRequests;
+       
         public static void Main(string[] args)
         {
+            NrRequests = 0;
             CreateHostBuilder(args).Build().Run();
         }
 

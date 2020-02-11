@@ -2,6 +2,14 @@
 <ul>
     <li *ngFor = "let coffee of MyCoffees">
         <input type="checkbox"  [(ngModel)]="coffee.isChecked"  name="{{coffee.name}}" value="{{coffee.id}}" (change)="checkValue(coffee.isChecked, coffee)" >  {{coffee.name}} {{coffee.price}}
-        <app-syroups></app-syroups>  
+      
+        <select [(ngModel)]="coffee.selectedOption"  (change)="selectNrCoffees($event.target.value, coffee)">
+            <option *ngFor="let o of options" [value]="o.id" >
+               {{o.name}}
+            </option>
+         </select>
+      
+       
+       <app-syroups [parentCoffee]="coffee"></app-syroups>  
     </li>
 </ul>
