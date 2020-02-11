@@ -37,7 +37,7 @@ export class SyroupsComponent implements OnInit {
   checkValue(b:boolean, c:Syroup){
     window.alert(JSON.stringify(c));
     if(b){
-     
+    c.father.isChecked = true;
     this.cs.SyroupWasSelected(c);
     }
     else{

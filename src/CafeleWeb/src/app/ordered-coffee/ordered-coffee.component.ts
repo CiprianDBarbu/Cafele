@@ -3,6 +3,8 @@ import { CoffeeSelectedService } from '../coffee-selected.service';
 import { Order } from '../order';
 import { OrderedCoffee } from '../OrderedCoffee';
 import { SyroupSelectedService } from '../syroup-selected.service';
+import { Coffee } from '../coffee';
+import { Syroup } from '../syroup';
 
 @Component({
   selector: 'app-ordered-coffee',
@@ -14,29 +16,49 @@ export class OrderedCoffeeComponent implements OnInit {
   o: Order = new Order();
 
   constructor(private cs :CoffeeSelectedService, private ss:SyroupSelectedService) { }
+ 
+  addCoffeeToOrderedList(cf:Coffee)
+  {
+    let oc = new OrderedCoffee();
+    oc.coffee = cf;
+    oc.nrCoffees =parseInt( cf.selectedOption.toString(),10);
+    //window.alert("before push");
+    this.o.CoffeList.push(oc);
+    //incercare de sortare
+    this.o.CoffeList.sort((n1,n2) => {
+      if (n1.coffee.name > n2.coffee.name) {
+          return 1;
+      }
+  
+      if (n1.coffee.name < n2.coffee.name) {
+          return -1;
+      }
+  
+      return 0;
+  });
+
+  }
+
+  addSyroupToORderedCoffee(cs:Syroup):boolean
+  {
+    let existFather:boolean = false;
+          for(let ol of this.o.CoffeList)
+          {
+            
+            if(ol.coffee == cs.father){
+             //window.alert("merge");
+             existFather = true;
+              ol.syroup = cs;
+            }
+          }
+          return existFather;
+  }
 
   ngOnInit() {
       this.cs.selectCoffee$.subscribe(
 
         cf=>{
-          let oc = new OrderedCoffee();
-          oc.coffee = cf;
-          oc.nrCoffees =parseInt( cf.selectedOption.toString(),10);
-          //window.alert("before push");
-          this.o.CoffeList.push(oc);
-          //incercare de sortare
-          this.o.CoffeList.sort((n1,n2) => {
-            if (n1.coffee.name > n2.coffee.name) {
-                return 1;
-            }
-        
-            if (n1.coffee.name < n2.coffee.name) {
-                return -1;
-            }
-        
-            return 0;
-        });
-
+          this.addCoffeeToOrderedList(cf);
           //window.alert(this.o.CoffeList.length);
           //this.o.TotalPrice += oc.coffee.price;
         }
@@ -45,14 +67,14 @@ export class OrderedCoffeeComponent implements OnInit {
       this.ss.selectSyroup$.subscribe(
         cs=>{
          
-          for(let ol of this.o.CoffeList)
+          let existFather:boolean = this.addSyroupToORderedCoffee(cs);
+          if(!existFather)
           {
-            
-            if(ol.coffee == cs.father){
-             //window.alert("merge");
-              ol.syroup = cs;
-            }
+            this.addCoffeeToOrderedList(cs.father);
+            this.addSyroupToORderedCoffee(cs);
           }
+
+          
         }
       );
 
