@@ -2,13 +2,13 @@ import { OrderedCoffee } from './OrderedCoffee';
 
 export class  Order {
     constructor() {
-        this.CoffeList=[];
+        this.coffees=[];
         //this.TotalPrice=0;
     }
-    CoffeList:OrderedCoffee[];
+    coffees:OrderedCoffee[];
     public TotalPrice(): number{
         let total:number = 0;
-        for(let i of this.CoffeList)
+        for(let i of this.coffees)
         {
             total += i.TotalPrice();
         }
@@ -17,7 +17,7 @@ export class  Order {
 
     public TotalNumberCoffees():number{
     let TotNr = 0;
-        for(let el of this.CoffeList)
+        for(let el of this.coffees)
         {
             TotNr += el.nrCoffees ;
         }

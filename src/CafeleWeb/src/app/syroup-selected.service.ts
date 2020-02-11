@@ -16,6 +16,7 @@ export class SyroupSelectedService {
   constructor() { }
 
   SyroupWasSelected(c:Syroup){
+    
     this.selectSyroup.next(c);
   }
 

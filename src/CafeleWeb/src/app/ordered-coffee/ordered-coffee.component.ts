@@ -5,6 +5,7 @@ import { OrderedCoffee } from '../OrderedCoffee';
 import { SyroupSelectedService } from '../syroup-selected.service';
 import { Coffee } from '../coffee';
 import { Syroup } from '../syroup';
+import { MenuListService } from '../menu-list.service';
 
 @Component({
   selector: 'app-ordered-coffee',
@@ -15,7 +16,7 @@ export class OrderedCoffeeComponent implements OnInit {
 
   o: Order = new Order();
 
-  constructor(private cs :CoffeeSelectedService, private ss:SyroupSelectedService) { }
+  constructor(private cs :CoffeeSelectedService, private ss:SyroupSelectedService,private ms:MenuListService) { }
  
   addCoffeeToOrderedList(cf:Coffee)
   {
@@ -23,9 +24,9 @@ export class OrderedCoffeeComponent implements OnInit {
     oc.coffee = cf;
     oc.nrCoffees =parseInt( cf.selectedOption.toString(),10);
     //window.alert("before push");
-    this.o.CoffeList.push(oc);
+    this.o.coffees.push(oc);
     //incercare de sortare
-    this.o.CoffeList.sort((n1,n2) => {
+    this.o.coffees.sort((n1,n2) => {
       if (n1.coffee.name > n2.coffee.name) {
           return 1;
       }
@@ -42,7 +43,7 @@ export class OrderedCoffeeComponent implements OnInit {
   addSyroupToORderedCoffee(cs:Syroup):boolean
   {
     let existFather:boolean = false;
-          for(let ol of this.o.CoffeList)
+          for(let ol of this.o.coffees)
           {
             
             if(ol.coffee == cs.father){
@@ -54,12 +55,17 @@ export class OrderedCoffeeComponent implements OnInit {
           return existFather;
   }
 
+  sendOrder()
+  {
+    this.ms.sendOrder(this.o).subscribe(b=>window.alert("Comanda cu succes!"+b));
+  }
+
   ngOnInit() {
       this.cs.selectCoffee$.subscribe(
 
         cf=>{
           this.addCoffeeToOrderedList(cf);
-          //window.alert(this.o.CoffeList.length);
+          //window.alert(this.o.coffees.length);
           //this.o.TotalPrice += oc.coffee.price;
         }
       );
@@ -82,20 +88,20 @@ export class OrderedCoffeeComponent implements OnInit {
         cf=>{
          // window.alert("deselect coffee "+ JSON.stringify(cf));
             let position:number = -1;
-            for(let i=0; i<this.o.CoffeList.length;i++)
+            for(let i=0; i<this.o.coffees.length;i++)
             {
-                var element = this.o.CoffeList[i].coffee;
+                var element = this.o.coffees[i].coffee;
                 if(element == cf) position = i;
             }
             //window.alert("Now remove "+position);
             if(position>-1)
-                this.o.CoffeList.splice(position,1);
+                this.o.coffees.splice(position,1);
         }
       )
 
       this.ss.deselectedSyroup$.subscribe(
         cs=>{
-          for(let ol of this.o.CoffeList)
+          for(let ol of this.o.coffees)
           {
             
             if(ol.coffee == cs.father){

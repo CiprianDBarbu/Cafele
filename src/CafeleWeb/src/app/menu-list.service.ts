@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Coffee } from './coffee';
 import { Observable } from 'rxjs';
 import { Syroup } from './syroup';
+import { Order } from './order';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,10 @@ export class MenuListService {
     public getSyroup() :Observable<Syroup[]> {
       return this.http.get<Syroup[]>(this.apiurl +"allsyroups");
   }
+
+  public sendOrder(o:Order):  Observable<Boolean>
+  {
+    return this.http.post<boolean>(this.apiurl +"SaveOrder",o);
+  } 
 
 }

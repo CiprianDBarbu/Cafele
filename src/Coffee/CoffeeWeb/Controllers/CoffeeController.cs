@@ -87,5 +87,15 @@ namespace CoffeeWeb.Controllers
             return cm.SyroupMenuList.ToArray();
         }
 
+
+        [HttpPost]
+        public bool SaveOrder(Order order)
+        {
+            order.OrderStateModify(order_state.adding);
+            return true;
+        }
+        
+
+
     }
 }
