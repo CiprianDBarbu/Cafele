@@ -92,7 +92,34 @@ namespace CoffeeWeb.Controllers
         public bool SaveOrder(Order order)
         {
             order.OrderStateModify(order_state.adding);
-            return true;
+
+            var CoffeeAll = AllCofees();
+            var SyroupAll = AllSyroups();
+
+            bool OkAll = true;  //imi asum ca toate exista
+
+            if (!order.coffees.Any())   //daca nu exista nici o cafea
+                OkAll = false;
+
+            for(int i = 0; i < order.coffees.Count; i++)    //pentru fiecare element din vectorul de cafele comandate verific daca exista in vectorul mare de cafele
+            {
+                var curent = order.coffees[i].coffee;
+
+                if (CoffeeAll.Count(x=>x.name == curent.name) !=1 )   //numar cate cafele din lista mare de cafele sunt egale cu cafeaua mea (pe nume) si ar trebui sa fie 1
+                    OkAll = false;
+
+            }
+
+            for (int i = 0; i < order.coffees.Count; i++)    //pentru fiecare element din vectorul de cafele comandate verific daca exista siropul in vectorul mare de siroape
+            {
+                var curent = order.coffees[i].syroup;
+                if(curent != null)
+                    if (SyroupAll.Count(x=>x.name == curent.name) != 1)    //daca una nu exista OkAll se face false si return false;
+                        OkAll = false;
+            }
+
+
+            return OkAll;
         }
         
 

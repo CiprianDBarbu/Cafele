@@ -70,7 +70,7 @@ namespace CofeeMenu
                 var curent = (Coffee)x[i];
                 Ordered_Coffee aux = new Ordered_Coffee();
 
-                aux.coffee_order = curent;
+                aux.coffee = curent;
                 order.coffees.Add(aux);
 
             }

@@ -5,6 +5,14 @@ export class  Order {
         this.coffees=[];
         //this.TotalPrice=0;
     }
+
+    public isValid():boolean
+    {
+        if(this.coffees.length > 0)
+            return true;
+        return false;
+    }
+
     coffees:OrderedCoffee[];
     public TotalPrice(): number{
         let total:number = 0;

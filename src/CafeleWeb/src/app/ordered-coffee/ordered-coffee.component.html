@@ -11,4 +11,4 @@
 
 <p>Final price: {{o.TotalPrice()| number:'1.2-2'}}</p>
 
-<button (click)="sendOrder()">SEND ORDER</button>
+<button [disabled]="!o.isValid()"   (click)="sendOrder()">SEND ORDER</button>

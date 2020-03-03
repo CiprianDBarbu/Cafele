@@ -1,14 +1,18 @@
 ﻿using CoffeeBL;
 using Menu;
 using System;
+using System.Collections.Generic;
 
 namespace Coffee_console
 {
     class Program
     {
+
+        
         static void Main(string[] args)
         {
-            Order d= new Order();
+
+            Order d = new Order();
             Console.WriteLine("Please enter your name!");
             string name = Console.ReadLine();
 
@@ -27,7 +31,7 @@ namespace Coffee_console
             SyroupMenu sm = new SyroupMenu();
             cm.loadfromfile();
             sm.loadfromfile();
-          
+
             cm.InOrder();
             cm.ShowCoffee();
 
@@ -48,7 +52,7 @@ namespace Coffee_console
                 if (cm.ExistCoffee(namecoffee))
                 {
                     Console.WriteLine($"Thank you for chosing {namecoffee}");
-                    oc.coffee_order = cm.GiveCoffeeAfterName(namecoffee);
+                    oc.coffee = cm.GiveCoffeeAfterName(namecoffee);
                 }
                 else
                     Console.WriteLine("Not found coffee!\n");
@@ -60,7 +64,7 @@ namespace Coffee_console
                 {
                     oc.quantity = 1;
                 }
-                else 
+                else
                 {
                     Console.WriteLine("Thank you for choosing quantity!");
                     int quant_coffee = Int32.Parse(quantity_coffee);
@@ -70,12 +74,12 @@ namespace Coffee_console
                 Console.WriteLine("Please choose syroup!\n");
                 string NameSyroup = Console.ReadLine();
 
-                if(sm.ExistSyroup(NameSyroup))
+                if (sm.ExistSyroup(NameSyroup))
                 {
                     Console.WriteLine($"Thank you for choosing {NameSyroup}!\n");
-                    oc.syroup_order = sm.GiveSyroupAfterName(NameSyroup);
+                    oc.syroup = sm.GiveSyroupAfterName(NameSyroup);
                 }
-                else 
+                else
                 {
                     Console.WriteLine("Not found syroup!\n");
                 }
@@ -87,16 +91,16 @@ namespace Coffee_console
 
                 Console.WriteLine("Is the order done?(Y/N)");
                 string ok = Console.ReadLine().ToUpper();
-                if (ok == "Y" )
+                if (ok == "Y")
                     orderdone = true;
             }
 
             Console.WriteLine("Your order:\n");
-            for(int i = 0; i < d.coffees.Count;i++)
+            for (int i = 0; i < d.coffees.Count; i++)
             {
                 var curent = d.coffees[i];
                 //curent.actual_price = 1;
-                Console.WriteLine($"Coffee: {curent.coffee_order.name}  Quantity:{curent.quantity}  Price:{curent.actual_price}\n");
+                Console.WriteLine($"Coffee: {curent.coffee.name}  Quantity:{curent.quantity}  Price:{curent.actual_price}\n");
             }
             Console.WriteLine($"Total: {d.total_price}");
 

@@ -14,6 +14,7 @@ import { MenuListService } from '../menu-list.service';
 })
 export class OrderedCoffeeComponent implements OnInit {
 
+ 
   o: Order = new Order();
 
   constructor(private cs :CoffeeSelectedService, private ss:SyroupSelectedService,private ms:MenuListService) { }
@@ -57,6 +58,13 @@ export class OrderedCoffeeComponent implements OnInit {
 
   sendOrder()
   {
+   
+   // window.alert('sed +' + this.o.isValid());
+    for(let cf of this.o.coffees)
+    {
+      if(cf.syroup.name == Syroup.noNameSyroup)
+      cf.syroup = null;
+    }
     this.ms.sendOrder(this.o).subscribe(b=>window.alert("Comanda cu succes!"+b));
   }
 

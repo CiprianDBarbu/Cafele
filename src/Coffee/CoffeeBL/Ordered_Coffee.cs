@@ -15,18 +15,18 @@ namespace CoffeeBL
         public Ordered_Coffee()
         {
             this.quantity = 1;
-            this.coffee_order = new Coffee();
-            this.syroup_order = new Syroup();
+            this.coffee = new Coffee();
+            this.syroup = new Syroup();
         }
-        public Coffee coffee_order { get; set; }
-        public Syroup syroup_order { get; set; }
+        public Coffee coffee { get; set; }
+        public Syroup syroup { get; set; }
         public coffee_type type { get; set; }
 
         public int quantity { get; set; }
         public float actual_price {
             get
             {
-                return quantity * coffee_order.price + syroup_order.price;
+                return quantity * coffee.price + syroup.price;
             }
         
         }
